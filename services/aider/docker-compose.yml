@@ -1,0 +1,10 @@
+services:
+  aider:
+    image: paulgauthier/aider-full
+    stdin_open: true
+    tty: true
+    user: "${UID}:${GID}"
+    env_file:
+      - .env
+    volumes:
+      - ${CWD}/data/aider:/app
