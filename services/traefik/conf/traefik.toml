@@ -1,0 +1,24 @@
+[entryPoints]
+
+[entryPoints.web]
+address = ":80"
+[entryPoints.websecure]
+address = ":443"
+
+[providers.docker]
+endpoint = "unix:///var/run/docker.sock"
+exposedByDefault = false
+
+[certificatesresolvers.myresolver.acme]
+email = "your-email@example.com"
+storage = "acme.json"
+
+[certificatesresolvers.myresolver.acme.httpChallenge]
+entryPoint = "web"
+
+[api]
+dashboard = true
+insecure = true
+
+[logs]
+level = "DEBUG"

@@ -1,0 +1,19 @@
+services:
+
+  verdaccio:
+    image: verdaccio/verdaccio:latest
+    container_name: Verdaccio
+    restart: unless-stopped
+    networks:
+      - devxnet
+    ports:
+      - "4873:4873"
+    volumes:
+      - ./conf:/app/conf
+      - ./data:/app/storage
+    environment:
+      - VERDACCIO_PASSWD_FILE=/app/conf/.htpasswd
+      - VERDACCIO_PLUGINS=verdaccio-htpasswd-plugin-config.yaml
+    labels:
+      - "traefik.http.routers.verdaccio.rule=Host(`verdaccio.home.arpa`)"
+      - "traefik.http.services.verdaccio.loadbalancer.server.port=4873"

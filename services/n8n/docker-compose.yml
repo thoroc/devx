@@ -1,7 +1,10 @@
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n
-    restart: always
+    container_name: n8n
+    restart: unless-stopped
+    networks:
+      - devxnet
     ports:
       - "5678:5678"
     environment:
@@ -14,3 +17,6 @@ services:
     volumes:
       - ./data:/home/node/.n8n
       - ./local-files:/files
+    labels:
+      - "traefik.http.routers.n8n.rule=Host(`n8n.home.arpa`)"
+      - "traefik.http.services.n8n.loadbalancer.server.port=5678"

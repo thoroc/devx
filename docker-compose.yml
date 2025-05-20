@@ -1,0 +1,8 @@
+include:
+  - services/n8n/docker-compose.yml
+  - services/traefik/docker-compose.yml
+  - services/verdaccio/docker-compose.yml
+
+networks:
+  devxnet:
+    driver: bridge

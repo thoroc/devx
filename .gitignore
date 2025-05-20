@@ -1,5 +1,6 @@
 .env
-services/**
+services/**/data/
+!services/**/data/.gitkeep
 !services/**/docker-compose.yml
 !services/**/.gitkeep
 !services/**/.env.dist
