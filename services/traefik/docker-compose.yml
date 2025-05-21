@@ -4,7 +4,7 @@ services:
     container_name: ${SERVICE_NAME}-devx
     restart: unless-stopped
     env_file:
-      - .env # Load environment variables from .env file    
+      - .env # Load environment variables from .env file
     networks:
       - devxnet
     ports:
