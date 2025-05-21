@@ -42,7 +42,7 @@ To configure npm to use the Verdaccio registry, run the provided script:
 This script will set the npm registry to the Verdaccio domain specified in the `.env` file. By default, it will use:
 
 ```sh
-https://verdaccio.imb.local
+https://verdaccio.home.arpa
 ```
 
 To revert the npm registry to the default (npmjs.org), run:
