@@ -1,4 +1,6 @@
 .env
+.htpasswd
+*.log
 services/**/data/
 services/**/logs/
 !services/**/data/.gitkeep
