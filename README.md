@@ -8,6 +8,7 @@ suite of containers for development and testing
 **Table of Contents**  _generated with [DocToc](https://github.com/thlorenz/doctoc)_
 
 - [Setup](#setup)
+  - [Dependencies](#dependencies)
 - [bring up](#bring-up)
 - [bring down](#bring-down)
 - [Reference](#reference)
@@ -21,6 +22,22 @@ Ensure that all the .env files are set up correctly. You can copy the `.env.dist
 ```bash
 cp .env.dist .env
 ```
+
+### Dependencies
+
+All the dependencies for contributing to this project should be installed via `npm` and `mise`. Please check the `package.json`
+and `mise.toml`files for the list of dependencies.
+
+- [prettier](https://prettier.io/)
+  - [prettier-plugin-pkg](https://github.com/un-ts/prettier/tree/master/packages/pkg)
+  - [prettier-plugin-sh](https://github.com/un-ts/prettier/tree/master/packages/sh)
+    - [shellcheck](https://github.com/koalaman/shellcheck)
+  - [prettier-plugin-toml](https://github.com/un-ts/prettier/tree/master/packages/toml)
+- [jsonlint](https://github.com/prantlf/jsonlint)
+- [yaml-lint](https://github.com/rasshofer/yaml-lint)
+- [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
+- [doctoc](https://github.com/thlorenz/doctoc)
+- [lockfile-lint](https://github.com/lirantal/lockfile-lint)
 
 ## bring up
 
