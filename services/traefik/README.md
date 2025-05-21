@@ -4,7 +4,6 @@ Traefik is a reverse proxy.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 - [Setup](#setup)
 - [Run the application](#run-the-application)
@@ -12,16 +11,6 @@ Traefik is a reverse proxy.
 - [Generate Traefik Dashboard Credentials](#generate-traefik-dashboard-credentials)
 - [Access the Traefik dashboard](#access-the-traefik-dashboard)
 - [Stop the application](#stop-the-application)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-- [Traefik](#traefik)
-  - [Setup](#setup)
-  - [Run the application](#run-the-application)
-  - [Setup certs](#setup-certs)
-  - [Generate Traefik Dashboard Credentials](#generate-traefik-dashboard-credentials)
-  - [Access the Traefik dashboard](#access-the-traefik-dashboard)
-  - [Stop the application](#stop-the-application)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

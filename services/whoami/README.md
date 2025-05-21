@@ -4,22 +4,12 @@ Whoami is a simple web server that displays information about the request.
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 - [Setup](#setup)
 - [Run the application](#run-the-application)
 - [Setup the Whoami service](#setup-the-whoami-service)
 - [Access the Whoami service](#access-the-whoami-service)
 - [Stop the application](#stop-the-application)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-- [Whoami](#whoami)
-  - [Setup](#setup)
-  - [Run the application](#run-the-application)
-  - [Setup the Whoami service](#setup-the-whoami-service)
-  - [Access the Whoami service](#access-the-whoami-service)
-  - [Stop the application](#stop-the-application)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 

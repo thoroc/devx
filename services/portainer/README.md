@@ -4,20 +4,11 @@ Portainer is a lightweight management UI which allows you to easily manage your 
 
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
 - [Setup](#setup)
 - [Run the application](#run-the-application)
 - [Access the Portainer UI](#access-the-portainer-ui)
 - [Stop the application](#stop-the-application)
-
-<!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-- [Portainer](#portainer)
-  - [Setup](#setup)
-  - [Run the application](#run-the-application)
-  - [Access the Portainer UI](#access-the-portainer-ui)
-  - [Stop the application](#stop-the-application)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
