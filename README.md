@@ -91,3 +91,5 @@ docker compose down -v --remove-orphans <service_name>
 - <https://github.com/MikeTeddyOmondi/traefik-config-docker>
 - <https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04>
 - <https://www.iantiemann.nl/posts/2025/2/traefik/>
+- <https://www.damirscorner.com/blog/posts/20250321-TraefikReverseProxyForDocker.html>
+- <https://technotim.live/posts/traefik-3-docker-certificates/>
