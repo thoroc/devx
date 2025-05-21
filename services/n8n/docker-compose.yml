@@ -1,7 +1,7 @@
 services:
   n8n:
     image: ${IMAGE_NAME}:${IMAGE_TAG} # N8N image
-    container_name: ${SERVICE_NAME}
+    container_name: ${SERVICE_NAME}-devx
     restart: unless-stopped
     networks:
       - devxnet

@@ -11,9 +11,9 @@ services:
       - .env # Load environment variables from .env file
     labels:
       - traefik.enable=true # Enable Traefik for this service
-      - traefik.http.routers.whoami.rule=Host(`whoami.${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
-      - traefik.http.routers.whoami.entrypoints=websecure # Determine the entry point to use for the service
-      - traefik.http.routers.whoami.tls=true # Enable TLS for the service
-      - traefik.http.services.whoami.loadbalancer.server.port=${EXTERNAL_PORT} # Determine which port from the service to expose through Traefik
-      - traefik.http.routers.whoami.service=whoami # Determine what service to use
-      - traefik.http.routers.whoami.tls.certresolver=myresolver # Determine the certificate resolver to use
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
+      - traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure # Determine the entry point to use for the service
+      - traefik.http.routers.${SERVICE_NAME}.tls=true # Enable TLS for the service
+      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT} # Determine which port from the service to expose through Traefik
+      - traefik.http.routers.${SERVICE_NAME}.service=${SERVICE_NAME} # Determine what service to use
+      - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver # Determine the certificate resolver to use

@@ -1,13 +1,13 @@
 services:
   watchtower:
     image: ${IMAGE_NAME}:${IMAGE_TAG} # Watchtower image
-    container_name: ${SERVICE_NAME}
+    container_name: ${SERVICE_NAME}-devx
     restart: unless-stopped
     env_file:
       - .env # Load environment variables from .env file
     networks:
-      - dev-tools-server
+      - devxnet
     command:
       - --cleanup=true # Cleanup old images
     volumes:
-      - /var/run/docker.sock:/var/run/docker.sock # Docker socket
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket
