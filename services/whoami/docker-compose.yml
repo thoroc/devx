@@ -1,14 +1,19 @@
 services:
   whoami:
-    image: "traefik/whoami"
+    image: ${IMAGE_NAME}:${IMAGE_TAG} # Whoami image
     container_name: "${SERVICE_NAME}"
     restart: unless-stopped
+    depends_on:
+      - traefik
     networks:
       - devxnet
+    env_file:
+      - .env # Load environment variables from .env file
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure"
-      - "traefik.http.routers.${SERVICE_NAME}.tls=true"
-      - "traefik.http.routers.${SERVICE_NAME}.tls.certresolver=letencrypt"
-      - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}"
+      - traefik.enable=true # Enable Traefik for this service
+      - traefik.http.routers.whoami.rule=Host(`whoami.${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
+      - traefik.http.routers.whoami.entrypoints=websecure # Determine the entry point to use for the service
+      - traefik.http.routers.whoami.tls=true # Enable TLS for the service
+      - traefik.http.services.whoami.loadbalancer.server.port=${EXTERNAL_PORT} # Determine which port from the service to expose through Traefik
+      - traefik.http.routers.whoami.service=whoami # Determine what service to use
+      - traefik.http.routers.whoami.tls.certresolver=myresolver # Determine the certificate resolver to use

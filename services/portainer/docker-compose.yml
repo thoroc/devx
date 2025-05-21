@@ -1,6 +1,6 @@
 services:
   portainer:
-    image: portainer/portainer-ce:latest
+    image: ${IMAGE_NAME}:${IMAGE_TAG} # Portainer image
     container_name: ${SERVICE_NAME}
     restart: unless-stopped
     networks:
@@ -9,11 +9,13 @@ services:
       - "${EXTERNAL_PORT}:8000"
       - "${EXTERNAL_PORT_SSL}:9443"
       - "9000:9000" # for http
+    env_file:
+      - .env # Load environment variables from .env file
     environment:
       - TZ=${GENERIC_TIMEZONE}
     volumes:
       - ./data:/data
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
-      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}"
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)
+      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}

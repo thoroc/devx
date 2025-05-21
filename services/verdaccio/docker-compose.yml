@@ -1,13 +1,15 @@
 services:
 
   verdaccio:
-    image: verdaccio/verdaccio:latest
+    image: ${IMAGE_NAME}:${IMAGE_TAG} # Verdaccio image
     container_name: ${SERVICE_NAME}
     restart: unless-stopped
+    env_file:
+      - .env # Load environment variables from .env file
     networks:
       - devxnet
     ports:
-      - "${EXTERNAL_PORT}:4873"
+      - ${EXTERNAL_PORT}:4873
     volumes:
       - ./conf:/app/conf
       - ./data:/app/storage
@@ -16,5 +18,9 @@ services:
       - VERDACCIO_PLUGINS=verdaccio-htpasswd-plugin-config.yaml
       - TZ=${GENERIC_TIMEZONE}
     labels:
-      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}"
+      - traefik.enable=true # Enable Traefik for this service
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
+      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${VERDACCIO_PORT} # Determine which port from the service to expose through Traefik
+      - traefik.http.routers.${SERVICE_NAME}.entryPoints=websecure # Determine the entry point to use for the service
+      - traefik.http.routers.${SERVICE_NAME}.tls=true # Enable TLS for the service
+      - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver

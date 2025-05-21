@@ -1,14 +1,18 @@
 services:
   traefik:
-    image: traefik:latest
+    image: ${IMAGE_NAME}:${IMAGE_TAG} # Traefik image
     container_name: ${SERVICE_NAME}
     restart: unless-stopped
+    env_file:
+      - .env # Load environment variables from .env file    
     networks:
       - devxnet
     ports:
-      - "${EXTERNAL_PORT}:80"
-      - "${EXTERNAL_PORT_SSL}:443"
-      - "${EXTERNAL_PORT_WEBUI}:8080"
+      - "${EXTERNAL_PORT}:80" # HTTP port
+      - "${EXTERNAL_PORT_SSL}:443" # HTTPS port
+      - "${EXTERNAL_PORT_WEBUI}:8080" # HTTP port
+    command:
+      - "--configFile=/etc/traefik/traefik.yml"
     security_opt:
       - no-new-privileges:true
     environment:
@@ -18,20 +22,19 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
       - ./conf/traefik.yml:/etc/traefik/traefik.yml:ro
       - ./conf/acme.json:/acme.json:rw
-      - ./logs:/var/log/traefik:rw
+      - ./conf:/etc/traefik/config # Config files
+      - ./certs:/etc/traefik/certs # Directory to store SSL certificates
+      - ./logs:/etc/logs/traefik # Directory to store logs
     labels:
-      - "traefik.enable=true"
-      - "traefik.http.routers.${SERVICE_NAME}.entrypoints=http"
-      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.middlewares.traefik-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}"
-      - "traefik.http.middlewares.traefik-https-redirect.redirectscheme.scheme=https"
-      - "traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https"
-      - "traefik.http.routers.traefik.middlewares=traefik-https-redirect"
-      - "traefik.http.routers.traefik-secure.entrypoints=https"
-      - "traefik.http.routers.traefik-secure.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.routers.traefik-secure.middlewares=traefik-auth"
-      - "traefik.http.routers.traefik-secure.tls=true"
-      # - "traefik.http.routers.traefik-secure.tls.certresolver=cloudflare"
-      # - "traefik.http.routers.traefik-secure.tls.domains[0].main=${DOMAIN_NAME}"
-      # - "traefik.http.routers.traefik-secure.tls.domains[0].sans=*.${DOMAIN_NAME}"
-      - "traefik.http.routers.traefik-secure.service=api@internal" 
+      - traefik.enable=true 
+      - traefik.http.routers.${SERVICE_NAME}.entrypoints=http 
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) 
+      - traefik.http.middlewares.${SERVICE_NAME}-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS} 
+      - traefik.http.middlewares.${SERVICE_NAME}-https-redirect.redirectscheme.scheme=https 
+      - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https 
+      - traefik.http.routers.${SERVICE_NAME}.middlewares=${SERVICE_NAME}-https-redirect 
+      - traefik.http.routers.${SERVICE_NAME}-secure.entrypoints=https 
+      - traefik.http.routers.${SERVICE_NAME}-secure.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) 
+      - traefik.http.routers.${SERVICE_NAME}-secure.middlewares=${SERVICE_NAME}-auth 
+      - traefik.http.routers.${SERVICE_NAME}-secure.tls=true 
+      - traefik.http.routers.${SERVICE_NAME}-secure.service=api@internal

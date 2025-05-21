@@ -1,12 +1,14 @@
 services:
   n8n:
-    image: docker.n8n.io/n8nio/n8n
+    image: ${IMAGE_NAME}:${IMAGE_TAG} # N8N image
     container_name: ${SERVICE_NAME}
     restart: unless-stopped
     networks:
       - devxnet
     ports:
       - "${EXTERNAL_PORT}:5678"
+    env_file:
+      - .env # Load environment variables from .env file
     environment:
       - N8N_HOST=${SERVICE_NAME}.${DOMAIN_NAME}
       - N8N_PORT=${EXTERNAL_PORT}
@@ -18,5 +20,5 @@ services:
       - ./data:/home/node/.n8n
       - ./local-files:/files
     labels:
-      - "traefik.http.routers.n8n.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
-      - "traefik.http.services.n8n.loadbalancer.server.port=${EXTERNAL_PORT}"
+      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)
+      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}

@@ -1,42 +1,52 @@
-api:
-  dashboard: true
-  insecure: true
-  debug: true
+# global configuration for Traefik
+global:
+  checkNewVersion: false # Disable checking for new versions
+  sendAnonymousUsage: false # Disable anonymous usage reporting
 
+# This enables the webinterface and API for Traefik
+api: # Web interface enable
+  dashboard: true # Enable the dashboard
+  insecure: true # Enable insecure access to the dashboard (not recommended for production)
+  # rule: "Host(`traefik.docker.localhost`)" # Set up a rule for the web interface, make sure to change the domain name and set up the DNS records!
+  debug: true # Enable debug mode for the dashboard
+
+# Entry points are the ports that Traefik listens on
 entryPoints:
-  http:
-    address: ":80"
+  web:
+    address: ":80" # HTTP port
     http:
       redirections:
-        entrypoint:
-          to: https
-          scheme: https
-  https:
-    address: ":443"
+        entryPoint:
+          to: websecure # Redirect HTTP to HTTPS
+          scheme: https # Redirect to HTTPS
+  websecure:
+    address: ":443" # HTTPS port
 
 serversTransport:
   insecureSkipVerify: true
 
-providers:
-  docker:
+# Providers are used to configure the dynamic configuration of Traefik
+providers: # Providers
+  docker: # Docker provider for dynamic configuration inside docker compose files
     endpoint: "unix:///var/run/docker.sock"
     exposedByDefault: false
-  file:
-    filename: "/config.yml"
+  file: # File provider for static
+    filename: /etc/traefik/config/traefik.yml
+    watch: true
 
-certificatesResolvers:
-  letencrypt:
+# certificatesResolvers are used to generate SSL certificates
+certificatesResolvers: # Certificate resolver
+  myresolver:
     acme:
-      email: youremail@email.com
-      storage: /certs/acme.json
-      caServer: https://acme-v02.api.letsencrypt.org/directory # prod (default)
-      # caServer: https://acme-staging-v02.api.letsencrypt.org/directory # staging
+      email: dev-tools-server@example.com # Email address for Let's Encrypt
+      storage: /etc/traefik/certs/acme.json # File to store SSL certificates
+      caServer: "https://acme-staging-v02.api.letsencrypt.org/directory" # Use the staging server for testing
       httpChallenge:
-        entryPoint: web
+        entryPoint: web # Use the HTTP challenge to verify domain ownership
 
 log:
-  level: "INFO"
-  filePath: "/var/log/traefik/traefik.log"
+  level: DEBUG # Log level (DEBUG, INFO, WARN, ERROR)
+  filePath: /etc/logs/traefik/traefik.log # Log file path
 
 accessLog:
-  filePath: "/var/log/traefik/access.log"
+  filePath: /etc/logs/traefik/access.log
