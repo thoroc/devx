@@ -6,12 +6,30 @@ Verdaccio is a lightweight private npm registry that can be run locally.
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
 
+- [Setup](#setup)
 - [Run the application](#run-the-application)
 - [Set the npm registry](#set-the-npm-registry)
 - [How to use the npm package manager](#how-to-use-the-npm-package-manager)
 - [Stop the application](#stop-the-application)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+- [Verdaccio](#verdaccio)
+  - [Setup](#setup)
+  - [Run the application](#run-the-application)
+  - [Set the npm registry](#set-the-npm-registry)
+  - [How to use the npm package manager](#how-to-use-the-npm-package-manager)
+  - [Stop the application](#stop-the-application)
+
+<!-- END doctoc generated TOC please keep comment here to allow auto update -->
+
+## Setup
+
+Ensure that all the .env files are set up correctly. You can copy the `.env.dist` files to `.env` and modify them as needed.
+
+```bash
+cp .env.dist .env
+```
 
 ## Run the application
 

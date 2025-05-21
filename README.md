@@ -10,7 +10,7 @@ suite of containers for development and testing
 - [Setup](#setup)
   - [Dependencies](#dependencies)
 - [Services](#services)
-  - [All services](#all-services)
+  - [Available services](#available-services)
     - [Run the applications](#run-the-applications)
     - [Stop the applications](#stop-the-applications)
 - [Reference](#reference)
@@ -43,7 +43,7 @@ and `mise.toml`files for the list of dependencies.
 
 ## Services
 
-### All services
+### Available services
 
  - [n8n](./services/n8n/README.md)
  - [portainer](./services/portainer/README.md)
