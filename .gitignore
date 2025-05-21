@@ -5,3 +5,4 @@ services/**/data/
 !services/**/.gitkeep
 !services/**/.env.dist
 !scripts/**
+node_modules/

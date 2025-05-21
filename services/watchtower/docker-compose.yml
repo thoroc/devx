@@ -1,0 +1,12 @@
+services:
+  watchtower:
+    image: containrrr/watchtower
+    container_name: watchtower
+    hostname: watchtower
+    networks:
+      - dev-tools-server
+    command:
+      - --cleanup=true # Cleanup old images
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock # Docker socket
+    restart: unless-stopped

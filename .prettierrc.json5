@@ -1,0 +1,39 @@
+{
+  proseWrap: "never",
+  semi: true,
+  singleQuote: true,
+  trailingComma: "all",
+  printWidth: 120,
+  plugins: ["prettier-plugin-sh", "prettier-plugin-pkg"],
+  overrides: [
+    {
+      files: ["*.md"],
+      options: {
+        printWidth: 120,
+        proseWrap: "always",
+        quoteProps: "as-needed",
+        semi: true,
+        singleQuote: false
+      }
+    },
+    {
+      files: ["*.json", "*.jsonc", "*.json5"],
+      options: {
+        trailingComma: "none",
+        printWidth: 120,
+        proseWrap: "preserve",
+        quoteProps: "as-needed",
+        singleQuote: false
+      }
+    },
+    {
+      files: ["*.yml", "*.yaml"],
+      options: {
+        printWidth: 120,
+        proseWrap: "preserve",
+        quoteProps: "as-needed",
+        singleQuote: false
+      }
+    }
+  ]
+}

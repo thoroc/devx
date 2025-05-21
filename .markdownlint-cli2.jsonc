@@ -1,0 +1,27 @@
+{
+  "$schema": "https://raw.githubusercontent.com/DavidAnson/markdownlint-cli2/main/schema/markdownlint-cli2-config-schema.json",
+  "fix": true,
+  "ignores": ["node_modules", "data"],
+  // "customRules": ["MD001", "MD007", "MD013", "MD024", "MD029", "MD030", "MD033", "MD046", "MD049"],
+  "config": {
+    "MD001": true,
+    "MD007": false,
+    "MD013": {
+      "code_blocks": false,
+      "tables": false,
+      "line_length": 120
+    },
+    "MD024": false,
+    "MD029": false,
+    "MD030": false,
+    "MD033": {
+      "allowed_elements": ["br", "abbr", "nobr", "details", "summary", "a", "img"]
+    },
+    "MD046": {
+      "style": "fenced"
+    },
+    "MD049": {
+      "style": "underscore"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+{
+  "mode": [
+    "json",
+    "cjson",
+    "json5"
+  ],
+  "quiet": true
+}

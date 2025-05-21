@@ -1,0 +1,203 @@
+2025-05-20T23:04:06+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:04:06+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:04:06+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:04:06+01:00 INF Starting provider *file.Provider
+2025-05-20T23:04:06+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:04:06+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:04:06+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:04:06+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:04:59+01:00 INF I have to go...
+2025-05-20T23:04:59+01:00 INF Stopping server gracefully
+2025-05-20T23:04:59+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:04:59+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:04:59+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:04:59+01:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:04:59+01:00 INF Server stopped
+2025-05-20T23:04:59+01:00 INF Shutting down
+2025-05-20T23:14:00+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:14:00+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:14:00+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:14:00+01:00 INF Starting provider *file.Provider
+2025-05-20T23:14:00+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:14:00+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:14:00+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:14:00+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:14:00+01:00 INF Starting provider *acme.Provider
+2025-05-20T23:14:00+01:00 INF Testing certificate renew... acmeCA=https://acme-staging-v02.api.letsencrypt.org/directory providerName=letencrypt.acme
+2025-05-20T23:14:00+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:14:00+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:14:00+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:14:00+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:14:49+01:00 INF I have to go...
+2025-05-20T23:14:49+01:00 INF Stopping server gracefully
+2025-05-20T23:14:49+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:14:49+01:00 ERR error="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:14:49+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:14:49+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:14:49+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:14:49+01:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:14:49+01:00 INF Server stopped
+2025-05-20T23:14:49+01:00 INF Shutting down
+2025-05-20T23:14:57+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:14:57+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:14:57+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:14:57+01:00 INF Starting provider *file.Provider
+2025-05-20T23:14:57+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:14:57+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:14:57+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:14:57+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:14:57+01:00 INF Starting provider *acme.Provider
+2025-05-20T23:14:57+01:00 INF Testing certificate renew... acmeCA=https://acme-staging-v02.api.letsencrypt.org/directory providerName=letencrypt.acme
+2025-05-20T23:14:57+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:14:57+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:14:57+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:14:57+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:15:47+01:00 INF I have to go...
+2025-05-20T23:15:47+01:00 INF Stopping server gracefully
+2025-05-20T23:15:47+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:15:47+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:15:47+01:00 ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:15:47+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:15:47+01:00 ERR error="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:15:47+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:15:47+01:00 INF Shutting down
+2025-05-20T23:15:47+01:00 INF Server stopped
+2025-05-20T23:15:49+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:15:49+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:15:49+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:15:49+01:00 INF Starting provider *file.Provider
+2025-05-20T23:15:49+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:15:49+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:15:49+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:15:49+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:15:49+01:00 INF Starting provider *acme.Provider
+2025-05-20T23:15:49+01:00 INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letencrypt.acme
+2025-05-20T23:15:49+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:15:49+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:15:49+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:15:49+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:16:15+01:00 INF I have to go...
+2025-05-20T23:16:15+01:00 INF Stopping server gracefully
+2025-05-20T23:16:15+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:16:15+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:16:15+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:16:15+01:00 ERR Error while starting server error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:16:15+01:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:16:15+01:00 ERR error="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:16:15+01:00 INF Server stopped
+2025-05-20T23:16:15+01:00 INF Shutting down
+2025-05-20T23:16:17+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:16:17+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:16:17+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:16:17+01:00 INF Starting provider *file.Provider
+2025-05-20T23:16:17+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:16:17+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:16:17+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:16:17+01:00 INF Starting provider *acme.Provider
+2025-05-20T23:16:17+01:00 INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letencrypt.acme
+2025-05-20T23:16:17+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:16:17+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:16:17+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:16:17+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:16:17+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:16:17+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:16:17+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:16:17+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:16:17+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:16:19+01:00 INF Register... providerName=letencrypt.acme
+2025-05-20T23:16:19+01:00 ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.home.arpa]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Error creating new order :: Cannot issue for \"whoami.home.arpa\": The ACME server refuses to issue a certificate for this domain name, because it is forbidden by policy" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.home.arpa"] providerName=letencrypt.acme routerName=whoami@docker rule=Host(`whoami.home.arpa`)
+2025-05-20T23:16:55+01:00 INF I have to go...
+2025-05-20T23:16:55+01:00 INF Stopping server gracefully
+2025-05-20T23:16:55+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:16:55+01:00 ERR error="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:16:55+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:16:55+01:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:16:55+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:16:55+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:16:55+01:00 INF Server stopped
+2025-05-20T23:16:55+01:00 INF Shutting down
+2025-05-20T23:16:57+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:16:57+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:16:57+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:16:57+01:00 INF Starting provider *file.Provider
+2025-05-20T23:16:57+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:16:57+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:16:57+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:16:57+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:16:57+01:00 INF Starting provider *acme.Provider
+2025-05-20T23:16:57+01:00 INF Testing certificate renew... acmeCA=https://acme-v02.api.letsencrypt.org/directory providerName=letencrypt.acme
+2025-05-20T23:16:58+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:16:58+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:16:58+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:16:58+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:16:58+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:16:58+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:16:58+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:16:58+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:16:59+01:00 ERR Unable to obtain ACME certificate for domains error="unable to generate a certificate for the domains [whoami.home.arpa]: acme: error: 400 :: POST :: https://acme-v02.api.letsencrypt.org/acme/new-order :: urn:ietf:params:acme:error:rejectedIdentifier :: Error creating new order :: Cannot issue for \"whoami.home.arpa\": The ACME server refuses to issue a certificate for this domain name, because it is forbidden by policy" ACME CA=https://acme-v02.api.letsencrypt.org/directory acmeCA=https://acme-v02.api.letsencrypt.org/directory domains=["whoami.home.arpa"] providerName=letencrypt.acme routerName=whoami@docker rule=Host(`whoami.home.arpa`)
+2025-05-20T23:19:06+01:00 INF I have to go...
+2025-05-20T23:19:06+01:00 INF Stopping server gracefully
+2025-05-20T23:19:06+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:19:06+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:19:06+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:19:06+01:00 ERR error="close tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:19:06+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:19:06+01:00 ERR error="close tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:19:06+01:00 INF Server stopped
+2025-05-20T23:19:06+01:00 INF Shutting down
+2025-05-20T23:22:22+01:00 INF Traefik version 3.4.0 built on 2025-05-05T13:50:06Z version=3.4.0
+2025-05-20T23:22:22+01:00 INF 
+Stats collection is disabled.
+Help us improve Traefik by turning this feature on :)
+More details on: https://doc.traefik.io/traefik/contributing/data-collection/
+
+2025-05-20T23:22:22+01:00 ERR The ACME resolve is skipped from the resolvers list error="unable to get ACME account: open /certs/acme.json: no such file or directory" resolver=letencrypt
+2025-05-20T23:22:22+01:00 INF Starting provider aggregator *aggregator.ProviderAggregator
+2025-05-20T23:22:22+01:00 INF Starting provider *file.Provider
+2025-05-20T23:22:22+01:00 ERR Cannot start the provider *file.Provider error="error adding file watcher: no such file or directory"
+2025-05-20T23:22:22+01:00 INF Starting provider *traefik.Provider
+2025-05-20T23:22:22+01:00 INF Starting provider *docker.Provider
+2025-05-20T23:22:22+01:00 INF Starting provider *acme.ChallengeTLSALPN
+2025-05-20T23:22:22+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:22:22+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:22:22+01:00 ERR EntryPoint doesn't exist entryPointName=web routerName=acme-http@internal
+2025-05-20T23:22:22+01:00 ERR No valid entryPoint for this router routerName=acme-http@internal
+2025-05-20T23:22:22+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:22:22+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:22:22+01:00 ERR EntryPoint doesn't exist entryPointName=websecure routerName=whoami@docker
+2025-05-20T23:22:22+01:00 ERR No valid entryPoint for this router routerName=whoami@docker
+2025-05-20T23:22:22+01:00 ERR Router uses a nonexistent certificate resolver certificateResolver=letencrypt routerName=whoami@docker
+2025-05-20T23:37:24+01:00 INF I have to go...
+2025-05-20T23:37:24+01:00 INF Stopping server gracefully
+2025-05-20T23:37:24+01:00 ERR error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:37:24+01:00 ERR error="accept tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:37:24+01:00 ERR Error while starting server error="accept tcp [::]:8080: use of closed network connection" entryPointName=traefik
+2025-05-20T23:37:24+01:00 ERR error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:37:24+01:00 ERR Error while starting server error="accept tcp [::]:443: use of closed network connection" entryPointName=https
+2025-05-20T23:37:24+01:00 ERR error="close tcp [::]:80: use of closed network connection" entryPointName=http
+2025-05-20T23:37:24+01:00 INF Server stopped
+2025-05-20T23:37:24+01:00 INF Shutting down

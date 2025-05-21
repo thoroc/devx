@@ -1,20 +1,19 @@
 services:
-
-  verdaccio:
-    image: verdaccio/verdaccio:latest
+  portainer:
+    image: portainer/portainer-ce:latest
     container_name: ${SERVICE_NAME}
     restart: unless-stopped
     networks:
       - devxnet
     ports:
-      - "${EXTERNAL_PORT}:4873"
-    volumes:
-      - ./conf:/app/conf
-      - ./data:/app/storage
+      - "${EXTERNAL_PORT}:8000"
+      - "${EXTERNAL_PORT_SSL}:9443"
+      - "9000:9000" # for http
     environment:
-      - VERDACCIO_PASSWD_FILE=/app/conf/.htpasswd
-      - VERDACCIO_PLUGINS=verdaccio-htpasswd-plugin-config.yaml
       - TZ=${GENERIC_TIMEZONE}
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
       - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}"

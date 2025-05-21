@@ -1,0 +1,22 @@
+{
+  "name": "devx",
+  "version": "1.0.0",
+  "description": "container stack for devs",
+  "author": "thoroc <thomas.a.roche@gmail.com>",
+  "license": "ISC",
+  "scripts": {
+    "down": "docker-compose down -v --remove-orphans",
+    "prepare": "lefthook install",
+    "up": "docker-compose up -d"
+  },
+  "devDependencies": {
+    "@prantlf/jsonlint": "^16.0.0",
+    "doctoc": "^2.2.1",
+    "lefthook": "^1.11.11",
+    "markdownlint-cli2": "^0.17.2",
+    "prettier": "^3.5.3",
+    "prettier-plugin-pkg": "^0.19.0",
+    "prettier-plugin-sh": "^0.17.2",
+    "yaml-lint": "^1.7.0"
+  }
+}

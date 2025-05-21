@@ -1,0 +1,14 @@
+services:
+  whoami:
+    image: "traefik/whoami"
+    container_name: "${SERVICE_NAME}"
+    restart: unless-stopped
+    networks:
+      - devxnet
+    labels:
+      - "traefik.enable=true"
+      - "traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`)"
+      - "traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure"
+      - "traefik.http.routers.${SERVICE_NAME}.tls=true"
+      - "traefik.http.routers.${SERVICE_NAME}.tls.certresolver=letencrypt"
+      - "traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT}"
