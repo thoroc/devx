@@ -38,7 +38,7 @@ providers: # Providers
 certificatesResolvers: # Certificate resolver
   myresolver:
     acme:
-      email: dev-tools-server@example.com # Email address for Let's Encrypt
+      email: devx@home.arpa # Email address for Let's Encrypt
       storage: /etc/traefik/certs/acme.json # File to store SSL certificates
       caServer: "https://acme-staging-v02.api.letsencrypt.org/directory" # Use the staging server for testing
       httpChallenge:
