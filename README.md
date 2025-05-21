@@ -12,23 +12,31 @@ suite of containers for development and testing
 - [Services](#services)
   - [All services](#all-services)
     - [Run the applications](#run-the-applications)
-    - [Stop the application](#stop-the-application)
-  - [Traefik](#traefik)
+    - [Stop the applications](#stop-the-applications)
+  - [n8n](#n8n)
     - [Run the application](#run-the-application)
+    - [Access the n8n UI](#access-the-n8n-ui)
+    - [Stop the application](#stop-the-application)
+  - [Portainer](#portainer)
+    - [Run the application](#run-the-application-1)
+    - [Access the Portainer UI](#access-the-portainer-ui)
+    - [Stop the application](#stop-the-application-1)
+  - [Traefik](#traefik)
+    - [Run the application](#run-the-application-2)
     - [Setup certs](#setup-certs)
     - [Generate Traefik Dashboard Credentials](#generate-traefik-dashboard-credentials)
     - [Access the Traefik dashboard](#access-the-traefik-dashboard)
-    - [Stop the application](#stop-the-application-1)
+    - [Stop the application](#stop-the-application-2)
   - [Whoami](#whoami)
-    - [Run the application](#run-the-application-1)
+    - [Run the application](#run-the-application-3)
     - [Setup the Whoami service](#setup-the-whoami-service)
     - [Access the Whoami service](#access-the-whoami-service)
-    - [Stop the application](#stop-the-application-2)
+    - [Stop the application](#stop-the-application-3)
   - [Verdaccio](#verdaccio)
-    - [Run the application](#run-the-application-2)
+    - [Run the application](#run-the-application-4)
     - [Set the npm registry](#set-the-npm-registry)
     - [How to use the npm package manager](#how-to-use-the-npm-package-manager)
-  - [Stop the application](#stop-the-application-3)
+  - [Stop the application](#stop-the-application-4)
 - [Reference](#reference)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
@@ -69,12 +77,66 @@ Run the following command:
 docker compose up -d
 ```
 
+#### Stop the applications
+
+To stop the running containers, use the following command:
+
+```sh
+docker compose down -v --remove-orphans
+```
+
+### n8n
+
+n8n is a free and open source workflow automation tool. It allows you to connect different services and automate tasks
+between them. n8n is a powerful tool for automating tasks and workflows.
+
+#### Run the application
+
+Run the following command:
+
+```sh
+docker compose up -d n8n
+```
+
+#### Access the n8n UI
+
+To access the n8n UI, open your browser and navigate to [http://n8n.home.arpa](http://n8n.home.arpa).
+You should see the n8n UI. The default username is `admin` and the password is `n8n`. You can change the password in the
+`docker-compose.yml` file under the `n8n` service. The password is stored in the `n8n` file in the `data` directory.
+
 #### Stop the application
 
 To stop the running containers, use the following command:
 
 ```sh
-docker compose down
+docker compose down n8n
+```
+
+### Portainer
+
+Portainer is a lightweight management UI which allows you to easily manage your Docker containers.
+
+#### Run the application
+
+Run the following command:
+
+```sh
+docker compose up -d portainer
+```
+
+#### Access the Portainer UI
+
+To access the Portainer UI, open your browser and navigate to [http://portainer.home.arpa](http://portainer.home.arpa).
+You should see the Portainer UI. The default username is `admin` and the password is `portainer`. You can change the
+password in the `docker-compose.yml` file under the `portainer` service. The password is stored in the `portainer` file
+in the `data` directory.
+
+#### Stop the application
+
+To stop the running containers, use the following command:
+
+```sh
+docker compose down portainer
 ```
 
 ### Traefik
@@ -108,9 +170,11 @@ Run the provided script to generate the certificates:
 This will generate the certificates in the `data/certs` directory. The script will create a Root CA and certificates for
 the following domains:
 
-- `traefik.imb.local`
-- `verdaccio.imb.local`
-- `whoami.imb.local`
+- `n8n.home.arpa`
+- `portainer.home.arpa`
+- `traefik.home.arpa`
+- `verdaccio.home.arpa`
+- `whoami.home.arpa`
 
 2. Trust the Root CA certificate:
 
@@ -128,7 +192,7 @@ the following domains:
 3. Update your `/etc/hosts` file to map the domains to `127.0.0.1`:
 
 ```sh
-sudo sh -c 'echo "127.0.0.1 whoami.imb.local traefik.imb.local verdaccio.imb.local" >> /etc/hosts'
+sudo sh -c 'echo "127.0.0.1 whoami.home.arpa traefik.home.arpa verdaccio.home.arpa n8n.home.arpa portainer.home.arpa" >> /etc/hosts'
 ```
 
 #### Generate Traefik Dashboard Credentials
@@ -145,7 +209,7 @@ Replace `yourpassword` with the desired password. The output will be a hashed pa
 #### Access the Traefik dashboard
 
 To access the Traefik dashboard, open your browser and navigate to
-[https://traefik.imb.local:8080](https://traefik.imb.local:8080). You should see the Traefik dashboard. The dashboard is
+[https://traefik.home.arpa:8080](https://traefik.home.arpa:8080). You should see the Traefik dashboard. The dashboard is
 secured with the `traefik` user and `traefik` password. You can change the credentials in the `docker-compose.yml` file
 under the `traefik` service. The credentials are stored in the `traefik` file in the `data` directory.
 
@@ -175,7 +239,7 @@ The Whoami service is already configured to work with Traefik. You don't need to
 
 #### Access the Whoami service
 
-To access the Whoami service, open your browser and navigate to [https://whoami.imb.local](https://whoami.imb.local).
+To access the Whoami service, open your browser and navigate to [https://whoami.home.arpa](https://whoami.home.arpa).
 
 #### Stop the application
 
@@ -197,7 +261,7 @@ Run the following command:
 docker compose up -d verdaccio
 ```
 
-Verdaccio will be accessible at [http://localhost:4873](http://localhost:4873).
+Verdaccio will be accessible at [http://verdaccio.home.arpa](http://verdaccio.home.arpa).
 
 #### Set the npm registry
 
@@ -236,7 +300,7 @@ $ docker exec -it verdaccio sh # This command will take you into the container
 ~ $ npm adduser --registry http://localhost:4873/
 npm notice Log in on http://localhost:4873/
 Username: thoroc
-Email: (this IS public) admin@imbc.com
+Email: (this IS public) admin@home.arpa
 
 Logged in on http://localhost:4873/.
 ```
@@ -254,7 +318,7 @@ npm login --registry http://localhost:4873/
 npm publish --registry http://localhost:4873/ --auth-type=legacy
 ```
 
-Go to [http://localhost:4873](http://localhost:4873) and refresh to see your package available.
+Go to [http://verdaccio.home.arpa](http://verdaccio.home.arpa) and refresh to see your package available.
 
 ### Stop the application
 

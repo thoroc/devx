@@ -4,54 +4,54 @@ pre-commit:
     "1. Create doctoc":
       description: "Create doctoc for all the markdown files"
       glob: "*.md"
-      interactive: true
+      # interactive: true
       run: "npx doctoc {staged_files}"
       stage_fixed: true
 
     "2. lint doc":
       description: "Linting all the docs"
       glob: "*.md"
-      interactive: true
+      # interactive: true
       run: "npx markdownlint-cli2 --fix {staged_files}"
       stage_fixed: true
 
     "3. Lint all the yaml files":
       description: "Linting all the yaml files"
       glob: "*.{yml,yaml}"
-      interactive: true
+      # interactive: true
       run: "npx yaml-lint {staged_files}"
       stage_fixed: true
 
     "4. Lint all the json files":
       description: "Linting all the json files"
       glob: "*.{json,jsonc,json5}, !**/acme.json, !**/node_modules"
-      interactive: true
+      # interactive: true
       run: "npx @prantlf/jsonlint {staged_files}"
       stage_fixed: true
 
     "5. Lint all the shell files":
       description: "Linting all the shell files"
       glob: "*.sh"
-      interactive: true
+      # interactive: true
       run: "npx shellcheck {staged_files}"
       stage_fixed: true
 
     "6. Lint lockfile":
       description: "Linting all the lock files"
       glob: "package*.{lock,json,lockfile}"
-      interactive: true
+      # interactive: true
       run: "npx lockfile-lint --validate-https --path"
 
     "7. Format all the files":
       description: "Format all the files"
       glob: "*.{md,yml,yaml,json,jsonc,json5,sh,toml}, !package-lock.json, !package.json"
-      interactive: true
+      # interactive: true
       run: "npx prettier --write {staged_files}"
       stage_fixed: true
 
     "8. Format lock files":
       description: "Format all the lock files"
       glob: "package*.{lock,json,lockfile}"
-      interactive: true
+      # interactive: true
       run: "npx prettier --write {staged_files}"
       stage_fixed: true
