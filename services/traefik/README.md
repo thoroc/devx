@@ -53,6 +53,7 @@ the following domains:
 - `portainer.home.arpa`
 - `traefik.home.arpa`
 - `verdaccio.home.arpa`
+- `watchtower.home.arpa`
 - `whoami.home.arpa`
 
 2. Trust the Root CA certificate:
@@ -71,7 +72,7 @@ the following domains:
 3. Update your `/etc/hosts` file to map the domains to `127.0.0.1`:
 
 ```sh
-sudo sh -c 'echo "127.0.0.1 whoami.home.arpa traefik.home.arpa verdaccio.home.arpa n8n.home.arpa portainer.home.arpa" >> /etc/hosts'
+sudo sh -c 'echo "127.0.0.1 n8n.home.arpa portainer.home.arpa traefik.home.arpa verdaccio.home.arpa watchtower.home.arpa whoami.home.arpa" >> /etc/hosts'
 ```
 
 ## Generate Traefik Dashboard Credentials

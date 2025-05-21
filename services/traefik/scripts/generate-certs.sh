@@ -3,7 +3,7 @@ set -e
 
 # Define variables
 CERTS_DIR="./data/traefik/certs"  # Updated to output certificates in data/certs
-DOMAINS=("traefik.home.arpa" "verdaccio.home.arpa")
+DOMAINS=("n8n.home.arpa" "portainer.home.arpa" "traefik.home.arpa" "verdaccio.home.arpa" "watchtower.home.arpa" "whoami.home.arpa")
 CA_NAME="DevToolsLocalCA"
 CA_KEY="${CERTS_DIR}/ca.key"
 CA_CERT="${CERTS_DIR}/ca.crt"
@@ -100,9 +100,9 @@ To trust these certificates on your system:
 
 For Docker & Traefik configuration:
 1. Update your Traefik configuration to use these certificates
-2. Ensure your domains are mapped in your hosts file: 
-   
-   sudo echo \"127.0.0.1 traefik.home.arpa verdaccio.home.arpa\" >> /etc/hosts
+2. Ensure your domains are mapped in your hosts file:
+
+   sudo echo \"127.0.0.1 n8n.home.arpa portainer.home.arpa traefik.home.arpa verdaccio.home.arpa watchtower.home.arpa whoami.home.arpa\" >> /etc/hosts
 
 "
 

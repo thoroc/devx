@@ -29,7 +29,7 @@ services:
       - traefik.enable=true 
       - traefik.http.routers.${SERVICE_NAME}.entrypoints=web 
       - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) 
-      - traefik.http.middlewares.${SERVICE_NAME}-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS} 
+      - traefik.http.middlewares.${SERVICE_NAME}-auth.basicauth.users=${TRAEFIK_DASHBOARD_CREDENTIALS}
       - traefik.http.middlewares.${SERVICE_NAME}-https-redirect.redirectscheme.scheme=https 
       - traefik.http.middlewares.sslheader.headers.customrequestheaders.X-Forwarded-Proto=https 
       - traefik.http.routers.${SERVICE_NAME}.middlewares=${SERVICE_NAME}-https-redirect 

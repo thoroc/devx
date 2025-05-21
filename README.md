@@ -86,6 +86,8 @@ docker compose down -v --remove-orphans <service_name>
 - <https://www.jimgogarty.com/installing-traefik-on-docker-with-docker-compose/>
 - <https://medium.com/@svenvanginkel/setting-up-traefik-v3-in-docker-0c0559a696f1>
 - <https://www.spad.uk/posts/practical-configuration-of-traefik-as-a-reverse-proxy-for-docker-updated-for-2023/>
+- <https://medium.com/soulweb-academy/docker-local-dev-stack-with-traefik-https-dnsmasq-locally-trusted-certificate-for-ubuntu-20-04-5f036c9af83d>
 - <https://selfhost.esc.sh/traefik-docker/>
 - <https://github.com/MikeTeddyOmondi/traefik-config-docker>
+- <https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04>
 - <https://www.iantiemann.nl/posts/2025/2/traefik/>

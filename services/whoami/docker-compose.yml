@@ -1,7 +1,7 @@
 services:
   whoami:
     image: ${IMAGE_NAME}:${IMAGE_TAG} # Whoami image
-    container_name: "${SERVICE_NAME}"
+    container_name: ${SERVICE_NAME}-devx
     restart: unless-stopped
     depends_on:
       - traefik
