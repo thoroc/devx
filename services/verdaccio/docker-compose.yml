@@ -1,15 +1,15 @@
 services:
 
   verdaccio:
-    image: ${IMAGE_NAME}:${IMAGE_TAG} # Verdaccio image
-    container_name: ${SERVICE_NAME}-devx
+    image: verdaccio/verdaccio:latest # Verdaccio image
+    container_name: verdaccio-devx
     restart: unless-stopped
-    env_file:
-      - .env # Load environment variables from .env file
+    # env_file:
+    #   - .env # Load environment variables from .env file
     networks:
       - devxnet
     ports:
-      - ${EXTERNAL_PORT}:4873
+      - "4873:4873" # HTTP port
     volumes:
       - ./conf:/app/conf
       - ./data:/app/storage
@@ -19,8 +19,8 @@ services:
       - TZ=${GENERIC_TIMEZONE}
     labels:
       - traefik.enable=true # Enable Traefik for this service
-      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
-      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT} # Determine which port from the service to expose through Traefik
-      - traefik.http.routers.${SERVICE_NAME}.entryPoints=websecure # Determine the entry point to use for the service
-      - traefik.http.routers.${SERVICE_NAME}.tls=true # Enable TLS for the service
-      - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver
+      - traefik.http.routers.verdaccio.rule=Host(`verdaccio.${DOMAIN_NAME}`) # Determine the domain name to use for the service
+      - traefik.http.services.verdaccio.loadbalancer.server.port=4873 # Determine which port from the service to expose through Traefik
+      - traefik.http.routers.verdaccio.entryPoints=websecure # Determine the entry point to use for the service
+      - traefik.http.routers.verdaccio.tls=true # Enable TLS for the service
+      - traefik.http.routers.verdaccio.tls.certresolver=myresolver

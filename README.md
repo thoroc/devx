@@ -82,14 +82,21 @@ docker compose down -v --remove-orphans <service_name>
 
 ## Reference
 
-- <https://www.putzisan.com/articles/https-setup-with-traefik-docker-compose-for-local-dev#service-error-404-page-not-found>
-- <https://www.jimgogarty.com/installing-traefik-on-docker-with-docker-compose/>
+- <https://blog.idempotent.ca/2018/04/18/run-your-own-home-dns-on-coredns/>
+- <https://dev.to/lotyp/simplifying-local-development-with-docker-mkcert-dnsmasq-and-traefik-3k57>
+- <https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0>
+- <https://dklesev.github.io/devenv/>
+- <https://exitcode0.net/posts/homeassistant-tls-with-tailscale-traefik/>
+- <https://github.com/MikeTeddyOmondi/traefik-config-docker>
+- <https://github.com/scottt732/coredns-traefik>
+- <https://medium.com/@bensoer/setup-a-private-homelab-dns-server-using-coredns-and-docker-edcfdded841a>
 - <https://medium.com/@svenvanginkel/setting-up-traefik-v3-in-docker-0c0559a696f1>
-- <https://www.spad.uk/posts/practical-configuration-of-traefik-as-a-reverse-proxy-for-docker-updated-for-2023/>
 - <https://medium.com/soulweb-academy/docker-local-dev-stack-with-traefik-https-dnsmasq-locally-trusted-certificate-for-ubuntu-20-04-5f036c9af83d>
 - <https://selfhost.esc.sh/traefik-docker/>
-- <https://github.com/MikeTeddyOmondi/traefik-config-docker>
+- <https://technotim.live/posts/traefik-3-docker-certificates/>
+- <https://www.damirscorner.com/blog/posts/20250321-TraefikReverseProxyForDocker.html>
 - <https://www.digitalocean.com/community/tutorials/how-to-use-traefik-v2-as-a-reverse-proxy-for-docker-containers-on-ubuntu-20-04>
 - <https://www.iantiemann.nl/posts/2025/2/traefik/>
-- <https://www.damirscorner.com/blog/posts/20250321-TraefikReverseProxyForDocker.html>
-- <https://technotim.live/posts/traefik-3-docker-certificates/>
+- <https://www.jimgogarty.com/installing-traefik-on-docker-with-docker-compose/>
+- <https://www.putzisan.com/articles/https-setup-with-traefik-docker-compose-for-local-dev>
+- <https://www.spad.uk/posts/practical-configuration-of-traefik-as-a-reverse-proxy-for-docker-updated-for-2023/>

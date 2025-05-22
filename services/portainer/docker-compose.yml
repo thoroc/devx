@@ -1,16 +1,14 @@
 services:
   portainer:
-    image: ${IMAGE_NAME}:${IMAGE_TAG} # Portainer image
-    container_name: ${SERVICE_NAME}-devx
+    image: portainer/portainer-ce:latest # Portainer image
+    container_name: portainer-devx
     restart: unless-stopped
     networks:
       - devxnet
     ports:
-      - "${EXTERNAL_PORT}:8000"
-      - "${EXTERNAL_PORT_SSL}:9443"
-      - "${EXTERNAL_PORT_WEBUI}:9000" # for http
-    env_file:
-      - .env # Load environment variables from .env file
+      - "8000:8000" # for http
+      - "8443:8443" # for https
+      - "9000:9000" # for webui
     environment:
       - TZ=${GENERIC_TIMEZONE}
     volumes:
@@ -18,8 +16,8 @@ services:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     labels:
       - traefik.enable=true # Enable Traefik for this service
-      - traefik.http.routers.${SERVICE_NAME}.rule=Host(`${SERVICE_NAME}.${DOMAIN_NAME}`) # Determine the domain name to use for the service
-      - traefik.http.services.${SERVICE_NAME}.loadbalancer.server.port=${EXTERNAL_PORT} # Determine which port from the service to expose through Traefik
-      - traefik.http.routers.${SERVICE_NAME}.entrypoints=websecure # Determine the entry point to use for the service
-      - traefik.http.routers.${SERVICE_NAME}.tls=true # Enable TLS for the service
-      - traefik.http.routers.${SERVICE_NAME}.tls.certresolver=myresolver # Determine the certificate resolver to use
+      - traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN_NAME}`) # Determine the domain name to use for the service
+      - traefik.http.services.portainer.loadbalancer.server.port=9000 # Determine which port from the service to expose through Traefik
+      - traefik.http.routers.portainer.entrypoints=websecure # Determine the entry point to use for the service
+      - traefik.http.routers.portainer.tls=true # Enable TLS for the service
+      - traefik.http.routers.portainer.tls.certresolver=myresolver # Determine the certificate resolver to use

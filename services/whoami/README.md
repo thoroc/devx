@@ -5,21 +5,12 @@ Whoami is a simple web server that displays information about the request.
 <!-- START doctoc generated TOC please keep comment here to allow auto update -->
 <!-- DON'T EDIT THIS SECTION, INSTEAD RE-RUN doctoc TO UPDATE -->
 
-- [Setup](#setup)
 - [Run the application](#run-the-application)
 - [Setup the Whoami service](#setup-the-whoami-service)
 - [Access the Whoami service](#access-the-whoami-service)
 - [Stop the application](#stop-the-application)
 
 <!-- END doctoc generated TOC please keep comment here to allow auto update -->
-
-## Setup
-
-Ensure that all the .env files are set up correctly. You can copy the `.env.dist` files to `.env` and modify them as needed.
-
-```bash
-cp .env.dist .env
-```
 
 ## Run the application
 

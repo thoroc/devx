@@ -1,10 +1,8 @@
 services:
   watchtower:
-    image: ${IMAGE_NAME}:${IMAGE_TAG} # Watchtower image
-    container_name: ${SERVICE_NAME}-devx
+    image: containrrr/watchtower:latest # Watchtower image
+    container_name: watchtower-devx
     restart: unless-stopped
-    env_file:
-      - .env # Load environment variables from .env file
     networks:
       - devxnet
     command:
