@@ -1,0 +1,5 @@
+$ORIGIN home.arpa.
+@         IN  SOA dns.home.arpa. admin.home.arpa. 2502011720 7200 3600 1209600 3600
+
+dns       IN  A   192.168.10.13
+mealie    IN  A   192.168.10.8

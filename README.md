@@ -45,6 +45,7 @@ and `mise.toml`files for the list of dependencies.
 
 ### Available services
 
+ - [coredns](./services/coredns/README.md)
  - [n8n](./services/n8n/README.md)
  - [portainer](./services/portainer/README.md)
  - [traefik](./services/traefik/README.md)
@@ -85,6 +86,7 @@ docker compose down -v --remove-orphans <service_name>
 - <https://blog.idempotent.ca/2018/04/18/run-your-own-home-dns-on-coredns/>
 - <https://dev.to/lotyp/simplifying-local-development-with-docker-mkcert-dnsmasq-and-traefik-3k57>
 - <https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0>
+- <https://di-marco.net/blog/it/2024-05-09-Intall_and_configure_coredns/>
 - <https://dklesev.github.io/devenv/>
 - <https://exitcode0.net/posts/homeassistant-tls-with-tailscale-traefik/>
 - <https://github.com/MikeTeddyOmondi/traefik-config-docker>
@@ -99,4 +101,5 @@ docker compose down -v --remove-orphans <service_name>
 - <https://www.iantiemann.nl/posts/2025/2/traefik/>
 - <https://www.jimgogarty.com/installing-traefik-on-docker-with-docker-compose/>
 - <https://www.putzisan.com/articles/https-setup-with-traefik-docker-compose-for-local-dev>
+- <https://www.someguyandhismac.com/posts/corends-docker-multihosts/>
 - <https://www.spad.uk/posts/practical-configuration-of-traefik-as-a-reverse-proxy-for-docker-updated-for-2023/>

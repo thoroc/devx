@@ -1,4 +1,5 @@
 include:
+  - services/coredns/docker-compose.yml
   - services/n8n/docker-compose.yml
   - services/portainer/docker-compose.yml
   - services/traefik/docker-compose.yml
