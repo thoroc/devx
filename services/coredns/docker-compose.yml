@@ -1,14 +1,16 @@
+name: coredns-devx
+
 services:
   coredns:
     image: coredns/coredns:latest
     container_name: coredns-devx
-    networks:
-      - devxnet
-    restart: unless-stopped
-    command: -conf /etc/coredns/Corefile -dns.port 5353
+    volumes:
+      - ./conf:/etc/coredns:ro
     ports:
       - "5353:53/tcp"
       - "5353:53/udp"
       - "8080:8080"
-    volumes:
-      - ./conf:/etc/coredns:ro
+    networks:
+      - devxnet
+    command: -conf /etc/coredns/Corefile -dns.port 5353
+    restart: unless-stopped

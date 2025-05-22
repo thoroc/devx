@@ -1,15 +1,9 @@
-services:
+name: verdaccio-devx
 
+services:
   verdaccio:
     image: verdaccio/verdaccio:latest # Verdaccio image
     container_name: verdaccio-devx
-    restart: unless-stopped
-    # env_file:
-    #   - .env # Load environment variables from .env file
-    networks:
-      - devxnet
-    ports:
-      - "4873:4873" # HTTP port
     volumes:
       - ./conf:/app/conf
       - ./data:/app/storage
@@ -17,6 +11,11 @@ services:
       - VERDACCIO_PASSWD_FILE=/app/conf/.htpasswd
       - VERDACCIO_PLUGINS=verdaccio-htpasswd-plugin-config.yaml
       - TZ=${GENERIC_TIMEZONE}
+    ports:
+      - "4873:4873" # HTTP port
+    networks:
+      - devxnet
+    restart: unless-stopped
     labels:
       - traefik.enable=true # Enable Traefik for this service
       - traefik.http.routers.verdaccio.rule=Host(`verdaccio.${DOMAIN_NAME}`) # Determine the domain name to use for the service

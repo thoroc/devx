@@ -19,30 +19,36 @@ pre-commit:
       run: "npx yaml-lint {staged_files}"
       stage_fixed: true
 
-    "4. Lint all the json files":
+    "4. Lint all the docker-compose files":
+      description: "Linting all the docker-compose files"
+      glob: "*docker-compose*.yml"
+      run: "npx dclint {staged_files}"
+      stage_fixed: true
+
+    "5. Lint all the json files":
       description: "Linting all the json files"
       glob: "*.{json,jsonc,json5}, !**/acme.json, !**/node_modules"
       run: "npx @prantlf/jsonlint {staged_files}"
       stage_fixed: true
 
-    "5. Lint all the shell files":
+    "6. Lint all the shell files":
       description: "Linting all the shell files"
       glob: "*.sh"
       run: "npx shellcheck {staged_files}"
       stage_fixed: true
 
-    "6. Lint lockfile":
+    "7. Lint lockfile":
       description: "Linting all the lock files"
       glob: "package*.{lock,json,lockfile}"
       run: "npx lockfile-lint --validate-https --path"
 
-    "7. Format all the files":
+    "8. Format all the files":
       description: "Format all the files"
       glob: "*.{md,yml,yaml,json,jsonc,json5,sh,toml}, !package-lock.json, !package.json"
       run: "npx prettier --write {staged_files}"
       stage_fixed: true
 
-    "8. Format lock files":
+    "9. Format lock files":
       description: "Format all the lock files"
       glob: "package*.{lock,json,lockfile}"
       run: "npx prettier --write {staged_files}"

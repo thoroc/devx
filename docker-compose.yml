@@ -1,3 +1,5 @@
+name: devx
+
 include:
   - services/coredns/docker-compose.yml
   - services/n8n/docker-compose.yml

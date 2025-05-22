@@ -1,14 +1,14 @@
+name: whoami-devx
+
 services:
   whoami:
     image: traefik/whoami:latest # Whoami image
     container_name: whoami-devx
-    restart: unless-stopped
     depends_on:
       - traefik
     networks:
       - devxnet
-    # env_file:
-    #   - .env # Load environment variables from .env file
+    restart: unless-stopped
     labels:
       - traefik.enable=true # Enable Traefik for this service
       - traefik.http.routers.whoami.rule=Host(`whoami.${DOMAIN_NAME}`) # Determine the domain name to use for the service

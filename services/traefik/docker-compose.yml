@@ -1,20 +1,9 @@
+name: traefik-devx
+
 services:
   traefik:
     image: traefik:latest # Traefik image
     container_name: traefik-devx
-    restart: unless-stopped
-    networks:
-      - devxnet
-    ports:
-      - "80:80" # HTTP port
-      - "443:443" # HTTPS port
-      - "8080:8080" # HTTP port
-    command:
-      - "--configFile=/etc/traefik/traefik.yml"
-    security_opt:
-      - no-new-privileges:true
-    environment:
-      - TZ=${GENERIC_TIMEZONE}
     volumes:
       - /etc/localtime:/etc/localtime:ro
       - /var/run/docker.sock:/var/run/docker.sock:ro
@@ -23,6 +12,17 @@ services:
       - ./conf:/etc/traefik/config # Config files
       - ./certs:/etc/traefik/certs # Directory to store SSL certificates
       - ./logs:/etc/logs/traefik # Directory to store logs
+    environment:
+      - TZ=${GENERIC_TIMEZONE}
+    ports:
+      - "80:80" # HTTP port
+      - "443:443" # HTTPS port
+      - "8080:8080" # HTTP port
+    networks:
+      - devxnet
+    command:
+      - "--configFile=/etc/traefik/traefik.yml"
+    restart: unless-stopped
     labels:
       - traefik.enable=true
       - traefik.http.routers.traefik.entrypoints=web
@@ -36,3 +36,5 @@ services:
       - traefik.http.routers.traefik-secure.middlewares=traefik-auth
       - traefik.http.routers.traefik-secure.tls=true
       - traefik.http.routers.traefik-secure.service=api@internal
+    security_opt:
+      - no-new-privileges:true

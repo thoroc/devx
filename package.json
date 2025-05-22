@@ -11,6 +11,7 @@
   },
   "devDependencies": {
     "@prantlf/jsonlint": "^16.0.0",
+    "dclint": "^2.2.2",
     "doctoc": "^2.2.1",
     "lefthook": "^1.11.11",
     "lockfile-lint": "^4.14.1",

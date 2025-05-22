@@ -1,19 +1,21 @@
+name: portainer-devx
+
 services:
   portainer:
     image: portainer/portainer-ce:latest # Portainer image
     container_name: portainer-devx
-    restart: unless-stopped
-    networks:
-      - devxnet
+    volumes:
+      - ./data:/data
+      - /var/run/docker.sock:/var/run/docker.sock:ro
+    environment:
+      - TZ=${GENERIC_TIMEZONE}
     ports:
       - "8000:8000" # for http
       - "8443:8443" # for https
       - "9000:9000" # for webui
-    environment:
-      - TZ=${GENERIC_TIMEZONE}
-    volumes:
-      - ./data:/data
-      - /var/run/docker.sock:/var/run/docker.sock:ro
+    networks:
+      - devxnet
+    restart: unless-stopped
     labels:
       - traefik.enable=true # Enable Traefik for this service
       - traefik.http.routers.portainer.rule=Host(`portainer.${DOMAIN_NAME}`) # Determine the domain name to use for the service

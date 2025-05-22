@@ -40,6 +40,7 @@ and `mise.toml`files for the list of dependencies.
 - [markdownlint-cli2](https://github.com/DavidAnson/markdownlint-cli2)
 - [doctoc](https://github.com/thlorenz/doctoc)
 - [lockfile-lint](https://github.com/lirantal/lockfile-lint)
+- [dclint](https://github.com/zavoloklom/docker-compose-linter)
 
 ## Services
 
@@ -83,6 +84,7 @@ docker compose down -v --remove-orphans <service_name>
 
 ## Reference
 
+- <https://blog.abowden.net/dns-server-for-homelab>
 - <https://blog.idempotent.ca/2018/04/18/run-your-own-home-dns-on-coredns/>
 - <https://dev.to/lotyp/simplifying-local-development-with-docker-mkcert-dnsmasq-and-traefik-3k57>
 - <https://dev.to/robbmanes/running-coredns-as-a-dns-server-in-a-container-1d0>

@@ -1,12 +1,12 @@
+name: n8n-devx
+
 services:
   n8n:
     image: docker.n8n.io/n8nio/n8n:latest # N8N image
     container_name: n8n-devx
-    restart: unless-stopped
-    networks:
-      - devxnet
-    ports:
-      - "5678:5678"
+    volumes:
+      - ./data:/home/node/.n8n
+      - ./local-files:/files
     environment:
       - N8N_HOST=n8n.${DOMAIN_NAME}
       - N8N_PORT=5678
@@ -14,9 +14,11 @@ services:
       - NODE_ENV=production
       - WEBHOOK_URL=https://n8n.${DOMAIN_NAME}/
       - GENERIC_TIMEZONE=${GENERIC_TIMEZONE}
-    volumes:
-      - ./data:/home/node/.n8n
-      - ./local-files:/files
+    ports:
+      - "5678:5678"
+    networks:
+      - devxnet
+    restart: unless-stopped
     labels:
       - traefik.http.routers.n8n.rule=Host(`n8n.${DOMAIN_NAME}`)
       - traefik.http.services.n8n.loadbalancer.server.port=5678

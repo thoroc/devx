@@ -1,11 +1,13 @@
+name: watchtower-devx
+
 services:
   watchtower:
     image: containrrr/watchtower:latest # Watchtower image
     container_name: watchtower-devx
-    restart: unless-stopped
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket
     networks:
       - devxnet
     command:
       - --cleanup=true # Cleanup old images
-    volumes:
-      - /var/run/docker.sock:/var/run/docker.sock:ro # Docker socket
+    restart: unless-stopped
